@@ -31,14 +31,13 @@ const DAYS = [
 
 const YOUTUBE_PLAYLIST_ITEMS_API =
   "https://www.googleapis.com/youtube/v3/playlistItems";
-const PLAYLIST_ID = "PLrVXEY3WfL-2AZjD_X_03OqpzGLrySOsv";
+const PLAYLIST_ID = "PLrVXEY3WfL-0TIVnAZZoORmw-UIEdO02k";
 export default async function Home() {
   //llamada a la api
   const res = await fetch(
     `${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&playlistId=${PLAYLIST_ID}&maxResults=30&key=${process.env.YOUTUBE_API_KEY}`
   );
   const data = await res.json();
-
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
@@ -52,12 +51,12 @@ export default async function Home() {
 
       <div
         className="relative flex place-items-center before:absolute before:h-[300px] 
-      before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial
-       before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 
-       after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-rose-00
+        before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial
+        before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 
+        after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-rose-00
         after:via-rose-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent
-         before:dark:to-pink-300 before:dark:opacity-10 after:dark:from-purple-400 after:dark:via-[#40036b] after:dark:opacity-40 
-         before:lg:h-[360px] z-[-1]"
+        before:dark:to-pink-300 before:dark:opacity-10 after:dark:from-purple-400 after:dark:via-[#40036b] after:dark:opacity-40 
+        before:lg:h-[360px] z-[-1]"
       ></div>
 
       <ul className="m-10 gap-6 mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 lg:text-left">
@@ -74,7 +73,9 @@ export default async function Home() {
                 className="flex flex-col items-center gap-4"
                 href={`https://www.youtube.com/watch?v=${resourceId.videoId}`}
               >
-                <h2 className={` text-2xl font-semibold`}>Day {DAYS[index]}</h2>
+                <h2 className={` text-2xl font-semibold`}>
+                  {item.snippet.title}
+                </h2>
                 <Image
                   className="rounded-lg"
                   width={medium.width}
