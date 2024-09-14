@@ -1,4 +1,3 @@
-import { reverse } from "dns";
 import Image from "next/image";
 
 const YOUTUBE_PLAYLIST_ITEMS_API =

@@ -2,7 +2,7 @@
 
 ## 🚀 Project Overview
 
-This repository contains my journey of completing 30 web projects in 30 days, following various tutorials. The projects are built using modern web technologies including React, Tailwind CSS, Next.js, and TypeScript.
+This repository contains my journey of 30 web redesign in 30 days. T
 
 ## 🛠️ Technologies Used
 
@@ -10,9 +10,3 @@ This repository contains my journey of completing 30 web projects in 30 days, fo
 - Tailwind CSS
 - Next.js
 - TypeScript
-
-## 🙏 Acknowledgements
-
-A big thank you to all the tutorial creators whose guidance made this project possible.
-
-![alt text](public/chrome_xpxJrrvxNd.png)
