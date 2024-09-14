@@ -32,40 +32,38 @@ export default async function Home() {
       ></div>
 
       <ul className="m-10 gap-6 mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 lg:text-left">
-        {data.items
-          .map((item: any, index: number) => {
-            const { id, snippet = {} } = item;
-            const { title, thumbnails = {}, resourceId } = snippet;
-            const { medium = {} } = thumbnails;
-            return (
-              <li
-                key={id}
-                className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+        {data.items.map((item: any, index: number) => {
+          const { id, snippet = {} } = item;
+          const { title, thumbnails = {}, resourceId } = snippet;
+          const { medium = {} } = thumbnails;
+          return (
+            <li
+              key={id}
+              className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+            >
+              <a
+                className="flex flex-col items-center gap-4"
+                href={`https://www.youtube.com/watch?v=${resourceId.videoId}`}
               >
-                <a
-                  className="flex flex-col items-center gap-4"
-                  href={`https://www.youtube.com/watch?v=${resourceId.videoId}`}
+                <h2 className={` text-2xl font-semibold`}>
+                  {item.snippet.title}
+                </h2>
+                <Image
+                  className="rounded-lg"
+                  width={medium.width}
+                  height={medium.height}
+                  src={medium.url}
+                  alt={title}
+                ></Image>
+                <p
+                  className={`w-full text-center text-sm opacity-50 text-balance`}
                 >
-                  <h2 className={` text-2xl font-semibold`}>
-                    {item.snippet.title}
-                  </h2>
-                  <Image
-                    className="rounded-lg"
-                    width={medium.width}
-                    height={medium.height}
-                    src={medium.url}
-                    alt={title}
-                  ></Image>
-                  <p
-                    className={`w-full text-center text-sm opacity-50 text-balance`}
-                  >
-                    {title}
-                  </p>
-                </a>
-              </li>
-            );
-          })
-          .reverse()}
+                  {title}
+                </p>
+              </a>
+            </li>
+          );
+        })}
       </ul>
     </main>
   );
