@@ -8,5 +8,4 @@ This repository contains my journey of 30 web redesign in 30 days. T
 
 - React
 - Tailwind CSS
-- Next.js
 - TypeScript
